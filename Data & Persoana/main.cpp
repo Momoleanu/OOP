@@ -1,4 +1,83 @@
-#include "Header.h"
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+class Data
+{
+private:
+	int an, luna, zi;
+public:
+	Data();
+	Data(int an, int luna, int zi);
+	int GetAn();
+	int GetLuna();
+	int GetZi();
+	int maiMare(Data data2);
+	void citireData();
+	void setData(Data* data)
+	{
+		this->an = data->an;
+		this->luna = data->luna;
+		this->zi = data->zi;
+	}
+};
+
+class Persoana
+{
+private:
+	char* nume, * prenume;
+	Data* dataNastere;
+protected:
+	void afisarePersoana();
+public:
+	Persoana();
+	Persoana(char* nume, char* prenume, Data* dataNastere);
+	Persoana(const Persoana& p);
+	~Persoana();
+	char* getNume();
+	char* getPrenume();
+	Data* getDataNastere();
+	void afisare();
+	void citirePersoana();
+	void setNume(char* nume);
+	void setPrenume(char* prenume);
+	void setDataNastere(Data* data);
+};
+
+class Student : public Persoana
+{
+private:
+	int grupa;
+public:
+	Student();
+	Student(char* nume, char* prenume, Data* dataNastere, int grupa);
+	Student(const Student& s);
+	~Student();
+	int getGrupa();
+	void afisare();
+	void citire();
+	void setGrupa(int grupa);
+	void mySwapStudent(Student& s1, Student& s2);
+};
+
+class Angajat : public Persoana
+{
+private:
+	Data* dataAngajare;
+	int salariu;
+public:
+	Angajat();
+	Angajat(char* nume, char* prenume, Data* dataNastere, Data* dataAngajare, int
+		salariu);
+	~Angajat();
+	void citire();
+	Data* getDataAngajare();
+	int getSalariu();
+	int getVarstaAnagajare();
+	void afisarePerioadaMuncita(Data& dataCurenta);
+	void afisare();
+};
 
 int main()
 {
