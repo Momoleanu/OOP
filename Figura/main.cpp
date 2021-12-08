@@ -12,7 +12,7 @@ public:
 	Figura(const char* culoare);
 	virtual ~Figura();
 	virtual double Aria()=0;
-    virtual double Perimetru()=0;
+        virtual double Perimetru()=0;
 	virtual void Afisare();
 };
 Figura* figCuArieMax(Figura** figuri, int n);
