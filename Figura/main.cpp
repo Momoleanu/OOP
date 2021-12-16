@@ -276,7 +276,7 @@ double Triunghi::Aria()
 {
 	double rez = 0;
 	double p;
-	p = (a + b + b) / 2;
+	p = (a + b + c) / 2;
 	rez = sqrt(p * (p - a) * (p - b) * (p - c));
 	return rez;
 }
