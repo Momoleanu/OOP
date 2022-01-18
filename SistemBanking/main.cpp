@@ -5,6 +5,7 @@
 #include<map>
 using namespace std;
 #define MIN_BALANCE 500
+
 class InsufficientFunds {};
 class Account
 {
@@ -37,6 +38,7 @@ public:
 	friend ostream& operator<<(ostream& os, Account& acc);
 };
 long Account::NextAccountNumber = 0;
+
 class Bank
 {
 private:
@@ -51,6 +53,7 @@ public:
 	void ShowAllAccounts();
 	~Bank();
 };
+
 int main()
 {
 	Bank b;
@@ -124,7 +127,7 @@ int main()
 			break;
 		case 7: break;
 		default:
-			cout << "\nEnter corret choice";
+			cout << "\nEnter correct choice";
 			exit(0);
 		}
 	} while (choice != 7);
@@ -174,10 +177,10 @@ ifstream& operator>>(ifstream& ifs, Account& acc)
 }
 ostream& operator<<(ostream& os, Account& acc)
 {
-	os << "First Name:" << acc.getFirstName() << endl;
-	os << "Last Name:" << acc.getLastName() << endl;
-	os << "Account Number:" << acc.getAccNo() << endl;
-	os << "Balance:" << acc.getBalance() << endl;
+	os << "First Name: " << acc.getFirstName() << endl;
+	os << "Last Name: " << acc.getLastName() << endl;
+	os << "Account Number: " << acc.getAccNo() << endl;
+	os << "Balance: " << acc.getBalance() << endl;
 	return os;
 }
 Bank::Bank()
